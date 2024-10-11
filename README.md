@@ -1,31 +1,48 @@
-Fundamentals of Embedded Systems, defines what embedded systems are, howthey are different from other systems, why specific programming techniques are needed,and why C++ is good and in many cases the best choice for embedded development. Itoutlines the constraints and challenges that embedded developers encounter in theireveryday work: limited system resources and CPU performance, dealing with hardwareerrors, and remote debugging
+# Embedded Systems Development with C++
 
-Setting Up the Environment, explains the differences in a developmentenvironment for embedded systems compared to web or desktop application developmentand goes through concepts of the build and target system, cross-compilation and cross-toolkits, the serial console, and the remote shell. It provides practical steps for setting upvirtualized build and target hosts for the most common desktop configurations runningWindows, macOS, or Linux.
+This guide provides an overview of embedded systems development using C++. It covers fundamental concepts, programming techniques, and best practices to navigate the unique challenges of embedded systems.
 
-Working with Different Architectures, explains how to take into account importantdifferences in CPU architectures and memory configuration of target systems in your C++code.
+## Fundamentals of Embedded Systems
+Embedded systems differ from other types of computing systems due to limited resources and strict performance requirements. This section explains why C++ is a preferred language for embedded development, highlighting its advantages in managing system constraints, hardware errors, and remote debugging.
 
-Handling Interrupts, covers the low-level concepts of interrupts and interruptservice routines. In modern OSes, even developers or device drivers have to use a higher-level API provided by the OS. That is why we explore the interrupt techniques using the8051 microcontroller
+## Setting Up the Development Environment
+Embedded system development requires a specialized environment. This section explains the key differences from web or desktop development, focusing on cross-compilation, toolchains, and target systems. It includes practical steps for setting up virtualized build environments for common platforms (Windows, macOS, Linux).
 
-Debugging, Logging, and Profiling, covers debugging techniques specific to Linux-based embedded systems, such as running gdb directly on the target board, setting upgdbserver for remote debugging, and the importance of logging for debugging and failureroot cause analysis
+## Working with Different Architectures
+Understanding the differences in CPU architectures and memory configurations is crucial for embedded development. This section guides developers on how to adapt C++ code to handle these variations effectively.
 
+## Handling Interrupts
+This section delves into interrupts and interrupt service routines, with practical examples using the 8051 microcontroller. It explains how higher-level APIs are used in modern operating systems to manage interrupts.
 
-Memory Management, provides several recipes and best practices of memoryallocation that will be helpful for developers of embedded systems. We discuss whydynamic memory allocation is avoided in embedded applications and what alternatives canbe considered for fast, deterministic memory allocation
+## Debugging, Logging, and Profiling
+Debugging embedded systems, especially Linux-based ones, requires specific techniques such as using `gdb` or `gdbserver` for remote debugging. This section emphasizes the importance of logging and profiling for troubleshooting and root cause analysis.
 
-Multithreading and Synchronization, explains how to use the functions and classesprovided by the standard library of C++ to implement efficient multithreading applicationsthat can utilize all the power of the modern multicore CPUs.
+## Memory Management
+Effective memory management is critical in embedded systems, where dynamic memory allocation is often avoided. This section provides best practices for deterministic memory allocation, discussing alternatives for fast and reliable performance.
 
+## Multithreading and Synchronization
+This section explores how C++'s standard library can be used to implement multithreaded applications that take full advantage of modern multicore CPUs. It covers synchronization techniques to ensure efficiency and safety in concurrent programming.
 
-Communication and Serialization, covers the concepts, challenges, and bestpractices for inter-process and inter-system communications, such as sockets, pipes, sharedmemory, and memory-efficient serialization using the FlatBuffers library. Decouplingapplications into independent components that talk to each other using well-definedasynchronous protocols is a de facto standard way of scaling a software system whilekeeping it fast and fault-tolerant
+## Communication and Serialization
+Inter-process and inter-system communication are essential in embedded systems. This section covers communication methods like sockets, pipes, and shared memory. It also introduces efficient serialization techniques using FlatBuffers to manage memory and performance.
 
-Peripherals, explains how to work with various peripheral devices in C++programs. Though most device communication APIs do not depend on a particularprogramming language, we will learn how to use the power of C++ to write wrappers thatare convenient for developers and help prevent common resource leaking errors
+## Working with Peripherals
+C++ provides powerful tools for interacting with peripheral devices. This section explains how to write resource-safe wrappers around device communication APIs, ensuring reliability in handling peripheral hardware.
 
-Reducing Power Consumption, explores the best practices for writing energy-efficient applications and utilizing the power management functions of the OS. It providesseveral practical recipes for Linux-based embedded systems, but the same concepts can beexpanded to any OS and any platform
+## Reducing Power Consumption
+Power management is a key concern in embedded systems. This section outlines best practices for writing energy-efficient code and utilizing OS-level power management features, with examples for Linux-based systems.
 
-Time Points and Intervals, covers various topics related to time manipulations,from measuring intervals to adding delays. We will learn about the API provided by thestandard C++ Chrono library and how it can be used efficiently to build portable embeddedapplications
+## Time Points and Intervals
+Time management is essential in embedded applications. This section explains how to use the C++ Chrono library to measure time intervals, handle delays, and build portable, time-sensitive applications.
 
-Error Handling and Fault Tolerance, explores possible implementations and bestpractices of error handling for embedded applications written in C++. It explains how to useC++ exceptions efficiently and compares it to alternatives such as traditional error codesand complex return types. It touches on basic fault-tolerance mechanisms such as watchdogtimers and heartbeats.
+## Error Handling and Fault Tolerance
+Error handling in embedded systems is critical for ensuring reliability. This section compares C++ exception handling with traditional error codes and explores fault-tolerance mechanisms like watchdog timers and heartbeats.
 
-Guidelines for Real-Time Systems, covers the specifics of real-time systems. Itbriefly describes how real-time systems are defined and what kinds of real-time systemsexist. It contains practical recipes on how to make the behavior of applications moredeterministic, a crucial requirement for real-time systems.
+## Real-Time Systems Guidelines
+Real-time systems require deterministic behavior. This section provides guidelines for making C++ applications more predictable, covering practical tips for working with real-time constraints.
 
-Guidelines for Safety-Critical Systems, explains what safety-critical systems areand how they are different from other embedded systems. It covers developmentmethodologies and tools that are required when working on safety-critical systems, fromfollowing formalized coding guidelines such as MISRA, AUTOSAR, or JSF to using staticcode analysis or formal software validation tools
+## Safety-Critical Systems Guidelines
+Safety-critical systems, such as those used in automotive or aerospace applications, demand rigorous development practices. This section discusses coding standards (MISRA, AUTOSAR, JSF) and tools like static code analysis for ensuring safety in embedded applications.
 
-Microcontroller Programming, outlines basic concepts of writing, compiling, anddebugging C++ code for microcontrollers. We will learn how to set up the developmentenvironment using the widely used Arduino board as an example
+## Microcontroller Programming
+The final section introduces basic microcontroller programming with C++, using the Arduino platform as an example. It covers the setup of development environments, writing, compiling, and debugging code for microcontrollers.
